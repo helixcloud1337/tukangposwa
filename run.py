@@ -4,7 +4,7 @@
 This tool was build for educational purpose only
 Do with your own risk
 
-@TukangPos v1.0
+@TukangPos v1.1
 @https://github.com/helixcloud1337/tukangposwa
 
 """
