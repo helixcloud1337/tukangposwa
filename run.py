@@ -16,6 +16,7 @@ from urllib.parse import quote
 from colorama import init
 from termcolor import colored
 import pyfiglet
+import clipboard
 
 init()
 ascii_banner = pyfiglet.figlet_format('TukangPos')
