@@ -23,23 +23,23 @@ print (ascii_banner)
 print (colored('Automated tool for sending whatsapp v1.0', 'green'))
 time.sleep(6)
 interval = 2
-position = (934, 445)
-txt = open('numbers.txt', 'r')
+position = 934,445 #position for clicking ok
+close = 292,20 #coordinate to close page
+txt = open("no.txt", "r") #phone number list
 numbers = txt.readlines()
 
 
-message = '''
-
-Tukang pos is here
-
-'''
+message = open("message.txt", "r").read() #change your message
+clipboard.copy(message)
 
 for i in numbers:
-    url = 'https://wa.me/{}?text={}'.format(i, message)
-    webbrowser.open(url)
-    time.sleep(5)
-    gui.click(position)
-    time.sleep(5)
-    gui.press('enter')
-    print ('Nomor', i ,'Sukses')
-    time.sleep(interval)
+ url = 'https://wa.me/{}'.format(i)
+ #url = 'https://web.whatsapp.com/send?phone={}&text&app_absent=0'.format(i)
+ webbrowser.open(url)
+ time.sleep(3)
+ gui.click(position)
+ time.sleep(3)
+ gui.hotkey('ctrl', 'v')
+ gui.press('enter')
+ gui.click(close)
+ time.sleep(interval)
